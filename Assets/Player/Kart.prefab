@@ -29,6 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1931960592881534523}
+  - {fileID: 4717820323450993140}
   m_Father: {fileID: 4992322410875231250}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43,7 +44,6 @@ GameObject:
   - component: {fileID: 1214137967438517165}
   - component: {fileID: 5975349370991894585}
   - component: {fileID: 4697613347506816067}
-  - component: {fileID: 7005404642102953169}
   m_Layer: 2
   m_Name: WheelFrontLeft (1)
   m_TagString: Untagged
@@ -63,8 +63,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4992322410875231250}
-  m_RootOrder: 2
+  m_Father: {fileID: 4717820323450993140}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5975349370991894585
 MeshFilter:
@@ -116,20 +116,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7005404642102953169
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965418216001962325}
-  m_Material: {fileID: 13400000, guid: a46ba4e273ba0684f90f4acc0fdf44d5, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.05
-  m_Height: 0.3
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1207326733657646682
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,10 +146,6 @@ Transform:
   m_Children:
   - {fileID: 6571817859153350398}
   - {fileID: 6483775947266558134}
-  - {fileID: 1214137967438517165}
-  - {fileID: 7287476769581816891}
-  - {fileID: 6094811770000789975}
-  - {fileID: 832542223227592572}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -243,7 +225,6 @@ GameObject:
   - component: {fileID: 7287476769581816891}
   - component: {fileID: 6947869762886702403}
   - component: {fileID: 2113287538961990724}
-  - component: {fileID: 5915140905832872540}
   m_Layer: 2
   m_Name: WheelFrontRight (1)
   m_TagString: Untagged
@@ -263,8 +244,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4992322410875231250}
-  m_RootOrder: 3
+  m_Father: {fileID: 4717820323450993140}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6947869762886702403
 MeshFilter:
@@ -316,20 +297,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5915140905832872540
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3108192317013092426}
-  m_Material: {fileID: 13400000, guid: a46ba4e273ba0684f90f4acc0fdf44d5, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.05
-  m_Height: 0.3
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4576268702585094492
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +339,6 @@ GameObject:
   - component: {fileID: 832542223227592572}
   - component: {fileID: 2883563099018673572}
   - component: {fileID: 4126245815050122143}
-  - component: {fileID: 8450014703768201995}
   m_Layer: 2
   m_Name: WheelRearRight (1)
   m_TagString: Untagged
@@ -392,8 +358,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4992322410875231250}
-  m_RootOrder: 5
+  m_Father: {fileID: 4717820323450993140}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2883563099018673572
 MeshFilter:
@@ -445,20 +411,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8450014703768201995
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4677939629534738359}
-  m_Material: {fileID: 13400000, guid: a46ba4e273ba0684f90f4acc0fdf44d5, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.05
-  m_Height: 0.3
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5148005512363339226
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +670,6 @@ GameObject:
   - component: {fileID: 6094811770000789975}
   - component: {fileID: 3385997947239523249}
   - component: {fileID: 862588144741725465}
-  - component: {fileID: 3975267256642233789}
   m_Layer: 2
   m_Name: WheelRearLeft (1)
   m_TagString: Untagged
@@ -738,8 +689,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4992322410875231250}
-  m_RootOrder: 4
+  m_Father: {fileID: 4717820323450993140}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3385997947239523249
 MeshFilter:
@@ -791,20 +742,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3975267256642233789
-CapsuleCollider:
+--- !u!1 &7805103999431556758
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7702270212574095375}
-  m_Material: {fileID: 13400000, guid: a46ba4e273ba0684f90f4acc0fdf44d5, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.05
-  m_Height: 0.3
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4717820323450993140}
+  m_Layer: 2
+  m_Name: Wheels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4717820323450993140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7805103999431556758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1214137967438517165}
+  - {fileID: 7287476769581816891}
+  - {fileID: 6094811770000789975}
+  - {fileID: 832542223227592572}
+  m_Father: {fileID: 6483775947266558134}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8060051663970368468
 GameObject:
   m_ObjectHideFlags: 0
