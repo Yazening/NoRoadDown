@@ -46,7 +46,6 @@ public class CarController : MonoBehaviour
     {
         UpdateBoostTimer();
         UpdateState();
-        Debug.Log($"Speed: {CurrentSpeed}"); 
     }
 
     private void FixedUpdate()
