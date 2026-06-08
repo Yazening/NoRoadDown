@@ -53,7 +53,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_Name
-      value: Log_bench_VS
+      value: Log_bench_VS Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29a4bc79581735d459573d195d241c22, type: 3}
+--- !u!1 &3550239864376673085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 29a4bc79581735d459573d195d241c22, type: 3}
+  m_PrefabInstance: {fileID: 4433113825395834476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4439509508551496047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550239864376673085}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8065767, y: 0.6034137, z: 0.69917506}
+  m_Center: {x: 0.0064076185, y: 0.0075789243, z: 0.00048586726}
+--- !u!114 &-4511030420794783397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550239864376673085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f4e0395f2bfb147b1f3ee6a294a8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacleType: 0
+  _bounceForce: 5000
+  _recoveryDelay: 1
+  _moveSpeed: 3
+  _moveDistance: 4
+  _fallDelay: 2
+  _warningDuration: 1.5
+  _shadowIndicator: {fileID: 0}
+  _fallForce: 30

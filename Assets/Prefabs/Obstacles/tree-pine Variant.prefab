@@ -61,3 +61,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c24573284901b6549aa508dfbf802298, type: 3}
+--- !u!1 &6395509068750434950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c24573284901b6549aa508dfbf802298, type: 3}
+  m_PrefabInstance: {fileID: 6052838230379040727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6438498531428621617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6395509068750434950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f4e0395f2bfb147b1f3ee6a294a8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacleType: 0
+  _bounceForce: 8
+  _recoveryDelay: 0.3
+  _moveSpeed: 3
+  _moveDistance: 4
+  _fallDelay: 2
+  _warningDuration: 1.5
+  _shadowIndicator: {fileID: 0}
+  _fallForce: 30
+--- !u!136 &7085315200952713735
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6395509068750434950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2787649
+  m_Height: 0.9375284
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.36189222, z: 0}
