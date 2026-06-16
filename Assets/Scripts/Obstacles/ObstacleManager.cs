@@ -25,6 +25,9 @@ public class ObstacleManager : MonoBehaviour
     [SerializeField] private GameObject _shadowIndicator;
     [SerializeField] private float _fallForce = 30f;
 
+    [Header("Falling Settings")]
+    [SerializeField] private GameObject _VFXHitImpact; 
+
     private Vector3 _startPosition;
     private float _moveDirection = 1f;
     private bool _isFalling = false;
@@ -130,6 +133,13 @@ public class ObstacleManager : MonoBehaviour
 
         if (kartRb != null && carController != null)
         {
+            if (_VFXHitImpact != null)
+            {
+                ContactPoint contact = other.GetContact(0);
+                GameObject vfx = Instantiate(_VFXHitImpact, contact.point, Quaternion.identity);
+                Destroy(vfx, 1f);
+            }
+
             Vector3 bounceDirection = other.transform.position - transform.position;
             bounceDirection.y = 0f;
             bounceDirection.Normalize();
@@ -140,9 +150,8 @@ public class ObstacleManager : MonoBehaviour
             StartCoroutine(BounceAndRecover(kartRb, carController));
         }
     }
-    private System.Collections.IEnumerator BounceAndRecover(
-        Rigidbody kartRb,
-        CarController carController)
+
+    private System.Collections.IEnumerator BounceAndRecover( Rigidbody kartRb,  CarController carController)
     {
         carController.enabled = false;
         yield return new WaitForSeconds(_recoveryDelay);

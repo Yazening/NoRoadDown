@@ -92,7 +92,9 @@ MonoBehaviour:
   _recoveryDelay: 1
   _moveSpeed: 3
   _moveDistance: 4
+  _rotationSpeed: 50
   _fallDelay: 2
   _warningDuration: 1.5
   _shadowIndicator: {fileID: 0}
   _fallForce: 30
+  _VFXHitImpact: {fileID: 8160502170736955153, guid: a39913faa6937864dbc96e82300ad6e2, type: 3}

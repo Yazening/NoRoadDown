@@ -49,7 +49,7 @@ public class RedScreenController : MonoBehaviour
         if (_pulseEnabled && targetIntensity > 0.4f)
         {
             float pulse = Mathf.Sin(Time.time * _pulseFrequency) * _pulseStrength;
-            targetIntensity += pulse;
+            targetIntensity += pulse;   
         }
 
         _currentAlpha = Mathf.Lerp(_currentAlpha, targetIntensity, _fadeSpeed * Time.deltaTime);
