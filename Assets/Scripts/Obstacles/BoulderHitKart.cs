@@ -2,9 +2,23 @@ using UnityEngine;
 
 public class BoulderHitKart : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    [SerializeField] private float _catchDistance = 2f;
+
+    private Transform _kart;
+
+    private void Update()
     {
-        if (!other.gameObject.CompareTag("Player")) return;
-        GameManager.Instance.PlayerDied();
+        if (_kart == null) return;
+
+        float distance = Vector3.Distance(transform.position, _kart.position);
+
+        if (distance <= _catchDistance)
+        {
+            GameManager.Instance.PlayerDied();
+        }
+    }
+    public void SetKart(Transform kart)
+    {
+        _kart = kart;
     }
 }

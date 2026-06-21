@@ -24,7 +24,6 @@ public class PlayerInputHandler : MonoBehaviour
         TurnInput = _inputActions.Player.Steer.ReadValue<float>();
         IsBoostPressed = _inputActions.Player.Boost.IsPressed();
 
-        Debug.Log($"Steer: {TurnInput} Boost: {IsBoostPressed}");
     }
 }
 
