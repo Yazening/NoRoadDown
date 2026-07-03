@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boost
   - Main Boulder
+  - Boulder
   layers:
   - Default
   - TransparentFX

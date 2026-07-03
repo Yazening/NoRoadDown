@@ -13,15 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -69,11 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 55d5df8e4dc4b0b48a5ecd60be585c23, type: 2}
     - target: {fileID: 919132149155446097, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
       propertyPath: m_Name
-      value: 'Main Boulder '
+      value: Main B Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
+      propertyPath: m_TagString
+      value: Boulder
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: b76f89efe2fbc4c40816d87460ce422f, type: 3}
       propertyPath: m_Layer
@@ -127,3 +131,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9780f9ddfb74b484d9bfbec6f2e3ac09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _catchDistance: 25
+  _chaseForce: 1

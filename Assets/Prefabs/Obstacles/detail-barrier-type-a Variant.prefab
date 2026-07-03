@@ -12,6 +12,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.791986
       objectReference: {fileID: 0}
@@ -25,19 +37,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.98462564
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.17205304
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.028979136
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008389641
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2675e4ef5ff69b4a8ea3a612dba7870, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -101,8 +113,10 @@ MonoBehaviour:
   _moveSpeed: 3
   _moveDistance: 4
   _rotationSpeed: 50
-  _fallDelay: 2
   _warningDuration: 1.5
   _shadowIndicator: {fileID: 0}
   _fallForce: 30
+  _shadowMinScale: {x: 0, y: 0, z: 0}
+  _shadowMaxScale: {x: 0, y: 0, z: 0}
   _VFXHitImpact: {fileID: 8160502170736955153, guid: a39913faa6937864dbc96e82300ad6e2, type: 3}
+  _VFXFallingImpact: {fileID: 0}

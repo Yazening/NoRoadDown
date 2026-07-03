@@ -28,7 +28,7 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
             ""id"": ""626d1ff8-5be7-46c9-9d89-da5303f78881"",
             ""actions"": [
                 {
-                    ""name"": ""Steer"",
+                    ""name"": ""Turn"",
                     ""type"": ""Value"",
                     ""id"": ""ba84a2da-8b28-43d7-84b9-5ef917f4a89f"",
                     ""expectedControlType"": ""Axis"",
@@ -65,7 +65,7 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""Turn"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -76,7 +76,7 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -87,9 +87,197 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""DebugTools"",
+            ""id"": ""66ee197b-4068-4965-aaff-abb46f4699fa"",
+            ""actions"": [
+                {
+                    ""name"": ""Debug Opener"",
+                    ""type"": ""Button"",
+                    ""id"": ""42c38105-410b-41da-82cd-167fea64e831"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Increase Car Speed "",
+                    ""type"": ""Button"",
+                    ""id"": ""96e5d2c5-348a-4795-bede-e92fb8569744"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Decrease Car Speed"",
+                    ""type"": ""Button"",
+                    ""id"": ""81828aad-6d13-4523-906c-b6d2f93e5caf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Have Boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""f43cee0e-9ee4-4090-ae13-057458692f1e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level 1"",
+                    ""type"": ""Button"",
+                    ""id"": ""7209c93a-fecd-4620-9f22-16581ec00d35"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level 2"",
+                    ""type"": ""Button"",
+                    ""id"": ""8db1a74e-e3aa-49ea-b64d-73eff1dd1daa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level 3"",
+                    ""type"": ""Button"",
+                    ""id"": ""c7abc609-13c1-40f9-aef6-23f823029a02"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Increase Boulder Speed"",
+                    ""type"": ""Button"",
+                    ""id"": ""810ae90a-84dd-444d-b158-72081d46917a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Decrease Boulder Speed"",
+                    ""type"": ""Button"",
+                    ""id"": ""48fb096e-4e08-44f0-a820-b0744618118d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5a279f18-5daa-4ccf-8532-55824d2960a8"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Debug Opener"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c495959c-2ec0-44cd-8343-998ff89a1190"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Increase Car Speed "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78478754-cdd4-4caa-916e-f03aa6e07886"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Decrease Car Speed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84478f34-1469-4b9c-b340-a8279d509249"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Have Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6d8fd27-a3e8-4084-9475-7ba0406d3733"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c34555ab-4e08-40f9-947a-3a1ff45d3e33"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff4b7d98-b0f7-4ed8-a8a9-5e15b9b71766"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level 3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""211ade7d-8812-4737-adf0-01270ee41ed8"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Increase Boulder Speed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac4d0d5d-7c7e-4d5b-ae16-cc003d4d6fbd"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Decrease Boulder Speed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -98,8 +286,19 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Steer = m_Player.FindAction("Steer", throwIfNotFound: true);
+        m_Player_Turn = m_Player.FindAction("Turn", throwIfNotFound: true);
         m_Player_Boost = m_Player.FindAction("Boost", throwIfNotFound: true);
+        // DebugTools
+        m_DebugTools = asset.FindActionMap("DebugTools", throwIfNotFound: true);
+        m_DebugTools_DebugOpener = m_DebugTools.FindAction("Debug Opener", throwIfNotFound: true);
+        m_DebugTools_IncreaseCarSpeed = m_DebugTools.FindAction("Increase Car Speed ", throwIfNotFound: true);
+        m_DebugTools_DecreaseCarSpeed = m_DebugTools.FindAction("Decrease Car Speed", throwIfNotFound: true);
+        m_DebugTools_HaveBoost = m_DebugTools.FindAction("Have Boost", throwIfNotFound: true);
+        m_DebugTools_Level1 = m_DebugTools.FindAction("Level 1", throwIfNotFound: true);
+        m_DebugTools_Level2 = m_DebugTools.FindAction("Level 2", throwIfNotFound: true);
+        m_DebugTools_Level3 = m_DebugTools.FindAction("Level 3", throwIfNotFound: true);
+        m_DebugTools_IncreaseBoulderSpeed = m_DebugTools.FindAction("Increase Boulder Speed", throwIfNotFound: true);
+        m_DebugTools_DecreaseBoulderSpeed = m_DebugTools.FindAction("Decrease Boulder Speed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,13 +360,13 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Steer;
+    private readonly InputAction m_Player_Turn;
     private readonly InputAction m_Player_Boost;
     public struct PlayerActions
     {
         private @NoRoadDownInputs m_Wrapper;
         public PlayerActions(@NoRoadDownInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Steer => m_Wrapper.m_Player_Steer;
+        public InputAction @Turn => m_Wrapper.m_Player_Turn;
         public InputAction @Boost => m_Wrapper.m_Player_Boost;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -178,9 +377,9 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Steer.started += instance.OnSteer;
-            @Steer.performed += instance.OnSteer;
-            @Steer.canceled += instance.OnSteer;
+            @Turn.started += instance.OnTurn;
+            @Turn.performed += instance.OnTurn;
+            @Turn.canceled += instance.OnTurn;
             @Boost.started += instance.OnBoost;
             @Boost.performed += instance.OnBoost;
             @Boost.canceled += instance.OnBoost;
@@ -188,9 +387,9 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Steer.started -= instance.OnSteer;
-            @Steer.performed -= instance.OnSteer;
-            @Steer.canceled -= instance.OnSteer;
+            @Turn.started -= instance.OnTurn;
+            @Turn.performed -= instance.OnTurn;
+            @Turn.canceled -= instance.OnTurn;
             @Boost.started -= instance.OnBoost;
             @Boost.performed -= instance.OnBoost;
             @Boost.canceled -= instance.OnBoost;
@@ -211,9 +410,131 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // DebugTools
+    private readonly InputActionMap m_DebugTools;
+    private List<IDebugToolsActions> m_DebugToolsActionsCallbackInterfaces = new List<IDebugToolsActions>();
+    private readonly InputAction m_DebugTools_DebugOpener;
+    private readonly InputAction m_DebugTools_IncreaseCarSpeed;
+    private readonly InputAction m_DebugTools_DecreaseCarSpeed;
+    private readonly InputAction m_DebugTools_HaveBoost;
+    private readonly InputAction m_DebugTools_Level1;
+    private readonly InputAction m_DebugTools_Level2;
+    private readonly InputAction m_DebugTools_Level3;
+    private readonly InputAction m_DebugTools_IncreaseBoulderSpeed;
+    private readonly InputAction m_DebugTools_DecreaseBoulderSpeed;
+    public struct DebugToolsActions
+    {
+        private @NoRoadDownInputs m_Wrapper;
+        public DebugToolsActions(@NoRoadDownInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @DebugOpener => m_Wrapper.m_DebugTools_DebugOpener;
+        public InputAction @IncreaseCarSpeed => m_Wrapper.m_DebugTools_IncreaseCarSpeed;
+        public InputAction @DecreaseCarSpeed => m_Wrapper.m_DebugTools_DecreaseCarSpeed;
+        public InputAction @HaveBoost => m_Wrapper.m_DebugTools_HaveBoost;
+        public InputAction @Level1 => m_Wrapper.m_DebugTools_Level1;
+        public InputAction @Level2 => m_Wrapper.m_DebugTools_Level2;
+        public InputAction @Level3 => m_Wrapper.m_DebugTools_Level3;
+        public InputAction @IncreaseBoulderSpeed => m_Wrapper.m_DebugTools_IncreaseBoulderSpeed;
+        public InputAction @DecreaseBoulderSpeed => m_Wrapper.m_DebugTools_DecreaseBoulderSpeed;
+        public InputActionMap Get() { return m_Wrapper.m_DebugTools; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DebugToolsActions set) { return set.Get(); }
+        public void AddCallbacks(IDebugToolsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DebugToolsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DebugToolsActionsCallbackInterfaces.Add(instance);
+            @DebugOpener.started += instance.OnDebugOpener;
+            @DebugOpener.performed += instance.OnDebugOpener;
+            @DebugOpener.canceled += instance.OnDebugOpener;
+            @IncreaseCarSpeed.started += instance.OnIncreaseCarSpeed;
+            @IncreaseCarSpeed.performed += instance.OnIncreaseCarSpeed;
+            @IncreaseCarSpeed.canceled += instance.OnIncreaseCarSpeed;
+            @DecreaseCarSpeed.started += instance.OnDecreaseCarSpeed;
+            @DecreaseCarSpeed.performed += instance.OnDecreaseCarSpeed;
+            @DecreaseCarSpeed.canceled += instance.OnDecreaseCarSpeed;
+            @HaveBoost.started += instance.OnHaveBoost;
+            @HaveBoost.performed += instance.OnHaveBoost;
+            @HaveBoost.canceled += instance.OnHaveBoost;
+            @Level1.started += instance.OnLevel1;
+            @Level1.performed += instance.OnLevel1;
+            @Level1.canceled += instance.OnLevel1;
+            @Level2.started += instance.OnLevel2;
+            @Level2.performed += instance.OnLevel2;
+            @Level2.canceled += instance.OnLevel2;
+            @Level3.started += instance.OnLevel3;
+            @Level3.performed += instance.OnLevel3;
+            @Level3.canceled += instance.OnLevel3;
+            @IncreaseBoulderSpeed.started += instance.OnIncreaseBoulderSpeed;
+            @IncreaseBoulderSpeed.performed += instance.OnIncreaseBoulderSpeed;
+            @IncreaseBoulderSpeed.canceled += instance.OnIncreaseBoulderSpeed;
+            @DecreaseBoulderSpeed.started += instance.OnDecreaseBoulderSpeed;
+            @DecreaseBoulderSpeed.performed += instance.OnDecreaseBoulderSpeed;
+            @DecreaseBoulderSpeed.canceled += instance.OnDecreaseBoulderSpeed;
+        }
+
+        private void UnregisterCallbacks(IDebugToolsActions instance)
+        {
+            @DebugOpener.started -= instance.OnDebugOpener;
+            @DebugOpener.performed -= instance.OnDebugOpener;
+            @DebugOpener.canceled -= instance.OnDebugOpener;
+            @IncreaseCarSpeed.started -= instance.OnIncreaseCarSpeed;
+            @IncreaseCarSpeed.performed -= instance.OnIncreaseCarSpeed;
+            @IncreaseCarSpeed.canceled -= instance.OnIncreaseCarSpeed;
+            @DecreaseCarSpeed.started -= instance.OnDecreaseCarSpeed;
+            @DecreaseCarSpeed.performed -= instance.OnDecreaseCarSpeed;
+            @DecreaseCarSpeed.canceled -= instance.OnDecreaseCarSpeed;
+            @HaveBoost.started -= instance.OnHaveBoost;
+            @HaveBoost.performed -= instance.OnHaveBoost;
+            @HaveBoost.canceled -= instance.OnHaveBoost;
+            @Level1.started -= instance.OnLevel1;
+            @Level1.performed -= instance.OnLevel1;
+            @Level1.canceled -= instance.OnLevel1;
+            @Level2.started -= instance.OnLevel2;
+            @Level2.performed -= instance.OnLevel2;
+            @Level2.canceled -= instance.OnLevel2;
+            @Level3.started -= instance.OnLevel3;
+            @Level3.performed -= instance.OnLevel3;
+            @Level3.canceled -= instance.OnLevel3;
+            @IncreaseBoulderSpeed.started -= instance.OnIncreaseBoulderSpeed;
+            @IncreaseBoulderSpeed.performed -= instance.OnIncreaseBoulderSpeed;
+            @IncreaseBoulderSpeed.canceled -= instance.OnIncreaseBoulderSpeed;
+            @DecreaseBoulderSpeed.started -= instance.OnDecreaseBoulderSpeed;
+            @DecreaseBoulderSpeed.performed -= instance.OnDecreaseBoulderSpeed;
+            @DecreaseBoulderSpeed.canceled -= instance.OnDecreaseBoulderSpeed;
+        }
+
+        public void RemoveCallbacks(IDebugToolsActions instance)
+        {
+            if (m_Wrapper.m_DebugToolsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDebugToolsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DebugToolsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DebugToolsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DebugToolsActions @DebugTools => new DebugToolsActions(this);
     public interface IPlayerActions
     {
-        void OnSteer(InputAction.CallbackContext context);
+        void OnTurn(InputAction.CallbackContext context);
         void OnBoost(InputAction.CallbackContext context);
+    }
+    public interface IDebugToolsActions
+    {
+        void OnDebugOpener(InputAction.CallbackContext context);
+        void OnIncreaseCarSpeed(InputAction.CallbackContext context);
+        void OnDecreaseCarSpeed(InputAction.CallbackContext context);
+        void OnHaveBoost(InputAction.CallbackContext context);
+        void OnLevel1(InputAction.CallbackContext context);
+        void OnLevel2(InputAction.CallbackContext context);
+        void OnLevel3(InputAction.CallbackContext context);
+        void OnIncreaseBoulderSpeed(InputAction.CallbackContext context);
+        void OnDecreaseBoulderSpeed(InputAction.CallbackContext context);
     }
 }

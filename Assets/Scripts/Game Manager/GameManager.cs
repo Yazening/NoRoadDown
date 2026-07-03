@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image _boostIcon;
     [SerializeField] private int _goTextSize = 50;
 
-    [Header("Scene Settings")]
+    [Header("Level Settings")]
     [SerializeField] private string _nextLevelName;
     [SerializeField] private string _mainMenuName = "MainMenu";
 

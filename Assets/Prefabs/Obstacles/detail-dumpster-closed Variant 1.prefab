@@ -25,15 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a21c1c5bf07cc5b459e386cbea169e13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -377.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a21c1c5bf07cc5b459e386cbea169e13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -172.49
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a21c1c5bf07cc5b459e386cbea169e13, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 917.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a21c1c5bf07cc5b459e386cbea169e13, type: 3}
       propertyPath: m_LocalRotation.w
@@ -93,8 +93,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5999999, y: 0.5447214, z: 0.4536656}
-  m_Center: {x: 0.0000019053194, y: 0.2723607, z: -0.026832819}
+  m_Size: {x: 0.5999999, y: 0.5447214, z: 0.40814114}
+  m_Center: {x: 0.0000019074544, y: 0.27236056, z: -0.004070362}
 --- !u!114 &-8549713650179205132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,13 +108,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleType: 0
-  _bounceForce: 5000
+  _bounceForce: 10000
   _recoveryDelay: 1
   _moveSpeed: 3
   _moveDistance: 4
   _rotationSpeed: 50
-  _fallDelay: 2
   _warningDuration: 1.5
   _shadowIndicator: {fileID: 0}
   _fallForce: 30
+  _shadowMinScale: {x: 0, y: 0, z: 0}
+  _shadowMaxScale: {x: 0, y: 0, z: 0}
   _VFXHitImpact: {fileID: 8160502170736955153, guid: a39913faa6937864dbc96e82300ad6e2, type: 3}
+  _VFXFallingImpact: {fileID: 0}

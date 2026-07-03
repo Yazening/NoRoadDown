@@ -7,7 +7,7 @@ public enum KartState
 public class CarController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float _carSpeed = 2000f;
+    public float _carSpeed = 2000f;
     [SerializeField] private float _turnStrength = 100f;
     [SerializeField] private float _maxSpeed = 15f;
     [SerializeField] private float _maxTurnAngle = 70f;
@@ -133,5 +133,10 @@ public class CarController : MonoBehaviour
         {
             Vector3 clampedFlat = flatVelocity.normalized * maxSpeed; _rb.velocity = new Vector3( clampedFlat.x, _rb.velocity.y,  clampedFlat.z);
         }
+    }
+    public float _debugCarSpeed
+    {
+        get { return _carSpeed; }
+        set { _carSpeed = value; }
     }
 }

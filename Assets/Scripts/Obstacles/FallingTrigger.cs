@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingTrigger : MonoBehaviour
@@ -9,7 +7,6 @@ public class FallingTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        _obstacleManager.TriggerFall();
-        Debug.Log("Starting TriggerFall coroutine!");
+        StartCoroutine(_obstacleManager.TriggerFall());
     }
 }

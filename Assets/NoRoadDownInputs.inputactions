@@ -1,12 +1,12 @@
 {
-    "name": "InputAction",
+    "name": "NoRoadDownInputs",
     "maps": [
         {
             "name": "Player",
             "id": "626d1ff8-5be7-46c9-9d89-da5303f78881",
             "actions": [
                 {
-                    "name": "Steer",
+                    "name": "Turn",
                     "type": "Value",
                     "id": "ba84a2da-8b28-43d7-84b9-5ef917f4a89f",
                     "expectedControlType": "Axis",
@@ -43,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steer",
+                    "action": "Turn",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steer",
+                    "action": "Turn",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -65,9 +65,197 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steer",
+                    "action": "Turn",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "DebugTools",
+            "id": "66ee197b-4068-4965-aaff-abb46f4699fa",
+            "actions": [
+                {
+                    "name": "Debug Opener",
+                    "type": "Button",
+                    "id": "42c38105-410b-41da-82cd-167fea64e831",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Increase Car Speed ",
+                    "type": "Button",
+                    "id": "96e5d2c5-348a-4795-bede-e92fb8569744",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Decrease Car Speed",
+                    "type": "Button",
+                    "id": "81828aad-6d13-4523-906c-b6d2f93e5caf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Have Boost",
+                    "type": "Button",
+                    "id": "f43cee0e-9ee4-4090-ae13-057458692f1e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Level 1",
+                    "type": "Button",
+                    "id": "7209c93a-fecd-4620-9f22-16581ec00d35",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Level 2",
+                    "type": "Button",
+                    "id": "8db1a74e-e3aa-49ea-b64d-73eff1dd1daa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Level 3",
+                    "type": "Button",
+                    "id": "c7abc609-13c1-40f9-aef6-23f823029a02",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Increase Boulder Speed",
+                    "type": "Button",
+                    "id": "810ae90a-84dd-444d-b158-72081d46917a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Decrease Boulder Speed",
+                    "type": "Button",
+                    "id": "48fb096e-4e08-44f0-a820-b0744618118d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5a279f18-5daa-4ccf-8532-55824d2960a8",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Debug Opener",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c495959c-2ec0-44cd-8343-998ff89a1190",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Increase Car Speed ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78478754-cdd4-4caa-916e-f03aa6e07886",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Decrease Car Speed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84478f34-1469-4b9c-b340-a8279d509249",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Have Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6d8fd27-a3e8-4084-9475-7ba0406d3733",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Level 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c34555ab-4e08-40f9-947a-3a1ff45d3e33",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Level 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff4b7d98-b0f7-4ed8-a8a9-5e15b9b71766",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Level 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "211ade7d-8812-4737-adf0-01270ee41ed8",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Increase Boulder Speed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac4d0d5d-7c7e-4d5b-ae16-cc003d4d6fbd",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Decrease Boulder Speed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

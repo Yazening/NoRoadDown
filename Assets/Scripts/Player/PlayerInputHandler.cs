@@ -21,9 +21,8 @@ public class PlayerInputHandler : MonoBehaviour
     }
     private void Update()
     {
-        TurnInput = _inputActions.Player.Steer.ReadValue<float>();
+        TurnInput = _inputActions.Player.Turn.ReadValue<float>();
         IsBoostPressed = _inputActions.Player.Boost.IsPressed();
-
     }
 }
 

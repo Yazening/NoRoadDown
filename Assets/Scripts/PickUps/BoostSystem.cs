@@ -42,4 +42,9 @@ public class BoostSystem : MonoBehaviour
     {
         _hasBoost = false;
     }
+    public void DebugGiveBoost()
+    {
+        _hasBoost = true;
+        _carController.GiveBoost();
+    }
 }

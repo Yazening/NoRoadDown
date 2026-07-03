@@ -41,19 +41,8 @@ public class ObstacleManager : MonoBehaviour
         if (_obstacleType == ObstacleType.Falling)
         {
             _rb = GetComponent<Rigidbody>();
-
-            if (_rb != null)
-                _rb.isKinematic = true;
-
-            if (_shadowIndicator != null)
-                _shadowIndicator.SetActive(false);
-        }
-        if (_obstacleType == ObstacleType.Falling)
-        {
-            _rb = GetComponent<Rigidbody>();
             if (_rb != null) _rb.isKinematic = true;
             if (_shadowIndicator != null) _shadowIndicator.SetActive(false);
-
             _meshRenderer = GetComponentInChildren<MeshRenderer>();
             if (_meshRenderer != null) _meshRenderer.enabled = false;
         }
@@ -107,7 +96,11 @@ public class ObstacleManager : MonoBehaviour
 
             if (_shadowIndicator != null)
             {
-                _shadowIndicator.transform.localScale = Vector3.Lerp(_shadowMinScale, _shadowMaxScale, progress);
+                _shadowIndicator.transform.localScale = Vector3.Lerp(
+                    _shadowMinScale,
+                    _shadowMaxScale,
+                    progress
+                );
             }
 
             yield return null;
@@ -176,7 +169,8 @@ public class ObstacleManager : MonoBehaviour
                     Destroy(vfx, 1f);
                 }
 
-                Vector3 bounceDirection = other.transform.position - transform.position;
+                ContactPoint contactPoint = other.GetContact(0);
+                Vector3 bounceDirection = contactPoint.normal;
                 bounceDirection.y = 0f;
                 bounceDirection.Normalize();
 

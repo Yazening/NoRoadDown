@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_LocalRotation.x
@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 29a4bc79581735d459573d195d241c22, type: 3}
       propertyPath: m_Name
@@ -88,13 +88,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleType: 0
-  _bounceForce: 5000
+  _bounceForce: 10000
   _recoveryDelay: 1
   _moveSpeed: 3
   _moveDistance: 4
   _rotationSpeed: 50
-  _fallDelay: 2
   _warningDuration: 1.5
   _shadowIndicator: {fileID: 0}
   _fallForce: 30
+  _shadowMinScale: {x: 0, y: 0, z: 0}
+  _shadowMaxScale: {x: 0, y: 0, z: 0}
   _VFXHitImpact: {fileID: 8160502170736955153, guid: a39913faa6937864dbc96e82300ad6e2, type: 3}
+  _VFXFallingImpact: {fileID: 0}
