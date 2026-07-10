@@ -120,7 +120,7 @@ public class ObstacleManager : MonoBehaviour
         {
             return hit.point.y;
         }
-        return transform.position.y - 10f; 
+        return transform.position.y - 10f;
     }
 
     private void MoveObstacle()
@@ -150,13 +150,11 @@ public class ObstacleManager : MonoBehaviour
         _isFalling = false;
     }
 
+
     private void OnCollisionEnter(Collision other)
     {
-
         if (other.gameObject.CompareTag("Player"))
-
         {
-
             Rigidbody kartRb = other.gameObject.GetComponent<Rigidbody>();
             CarController carController = other.gameObject.GetComponent<CarController>();
 
@@ -165,19 +163,22 @@ public class ObstacleManager : MonoBehaviour
                 if (_VFXHitImpact != null)
                 {
                     ContactPoint contact = other.GetContact(0);
+                    Debug.Log($"Spawning VFX at: {contact.point}");
                     GameObject vfx = Instantiate(_VFXHitImpact, contact.point, Quaternion.identity);
                     Destroy(vfx, 1f);
                 }
 
                 ContactPoint contactPoint = other.GetContact(0);
-                Vector3 bounceDirection = contactPoint.normal;
-                bounceDirection.y = 0f;
-                bounceDirection.Normalize();
+                Vector3 surfaceNormal = contactPoint.normal;
 
-                kartRb.velocity = Vector3.zero;
-                kartRb.AddForce(bounceDirection * _bounceForce, ForceMode.Impulse);
+                surfaceNormal.y = 0f;
+                surfaceNormal.Normalize();
 
-                StartCoroutine(BounceAndRecover(kartRb, carController));
+                Vector3 incomingVelocity = kartRb.velocity;
+                incomingVelocity.y = 0f;
+                Vector3 reflectedDirection = Vector3.Reflect(incomingVelocity.normalized, surfaceNormal);
+
+                StartCoroutine(BounceAndRecover(kartRb, carController, reflectedDirection));
             }
         }
 
@@ -187,7 +188,7 @@ public class ObstacleManager : MonoBehaviour
             {
                 ContactPoint contact = other.GetContact(0);
                 GameObject vfx = Instantiate(_VFXFallingImpact, contact.point, Quaternion.identity);
-                vfx.transform.position += Vector3.up * 0.5f; 
+                vfx.transform.position += Vector3.up * 0.5f;
                 Destroy(vfx, 1.5f);
             }
 
@@ -201,10 +202,29 @@ public class ObstacleManager : MonoBehaviour
         ResetFallingRock();
     }
 
-    private System.Collections.IEnumerator BounceAndRecover(Rigidbody kartRb, CarController carController)
+    private System.Collections.IEnumerator BounceAndRecover(
+    Rigidbody kartRb,
+    CarController carController,
+    Vector3 reflectedDirection)
     {
         carController.enabled = false;
+
+        yield return new WaitForFixedUpdate();
+
+        kartRb.constraints = RigidbodyConstraints.FreezeRotation;
+
+        kartRb.velocity = Vector3.zero;
+        kartRb.angularVelocity = Vector3.zero;
+
+        Vector3 bounceVelocity = reflectedDirection * _bounceForce;
+        bounceVelocity.y = 0f;
+        kartRb.velocity = bounceVelocity;
+
         yield return new WaitForSeconds(_recoveryDelay);
+
+        kartRb.velocity = Vector3.zero;
+        kartRb.constraints = RigidbodyConstraints.FreezeRotationY;
+
         carController.enabled = true;
     }
 }

@@ -155,6 +155,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ClearPlayerPrefs",
+                    "type": "Button",
+                    "id": "aa77b380-ea1b-4cfb-ad90-3ae63bcdd735",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -254,6 +263,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Decrease Boulder Speed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9914c1f2-d36a-4fba-b964-04f2b69bc54c",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClearPlayerPrefs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

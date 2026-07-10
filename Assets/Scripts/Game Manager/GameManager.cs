@@ -74,10 +74,20 @@ public class GameManager : MonoBehaviour
     }
     public void LevelComplete()
     {
-        if (!IsGameActive) return;
+        if(!IsGameActive) return;
 
         IsGameActive = false;
         _carController.enabled = false;
+
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "Level 1")
+            PlayerPrefs.SetInt("Level2Unlocked", 1);
+        else if (currentScene == "Level 2")
+            PlayerPrefs.SetInt("Level3Unlocked", 1);
+
+        PlayerPrefs.Save(); 
+
         _winPanel.SetActive(true);
     }
 

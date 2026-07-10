@@ -30,7 +30,7 @@ public class CarController : MonoBehaviour
     private BoostSystem _boostSystem;
 
     private bool _hasBoost = false;
-    private float _boostTimer = 0f; 
+    private float _boostTimer = 0f;
     private float _initialYAngle;
 
     private void Awake()
@@ -59,6 +59,11 @@ public class CarController : MonoBehaviour
     public void GiveBoost()
     {
         _hasBoost = true;
+    }
+
+    public void ResetTurnReference()
+    {
+        _initialYAngle = transform.eulerAngles.y;
     }
 
     private void UpdateBoostTimer()
@@ -103,19 +108,19 @@ public class CarController : MonoBehaviour
         if (Mathf.Abs(delta) > _maxTurnAngle)
         {
             float clampedAngle = _initialYAngle + Mathf.Clamp(delta, -_maxTurnAngle, _maxTurnAngle);
-            transform.eulerAngles = new Vector3( transform.eulerAngles.x, clampedAngle, transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, clampedAngle, transform.eulerAngles.z);
         }
     }
     private void MoveForward()
     {
         float force = CurrentState == KartState.Boosting ? _carSpeed * _boostMultiplier : _carSpeed;
-        _rb.AddForce(transform.forward * force * Time.fixedDeltaTime,  ForceMode.Acceleration);
+        _rb.AddForce(transform.forward * force * Time.fixedDeltaTime, ForceMode.Acceleration);
     }
 
     private void ApplyGravity()
     {
         RaycastHit hit;
-        IsGrounded = Physics.Raycast( transform.position, Vector3.down, out hit, _groundRayDistance,_groundLayer);
+        IsGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, _groundRayDistance, _groundLayer);
 
         if (!IsGrounded)
         {
@@ -131,7 +136,7 @@ public class CarController : MonoBehaviour
 
         if (flatVelocity.magnitude > maxSpeed)
         {
-            Vector3 clampedFlat = flatVelocity.normalized * maxSpeed; _rb.velocity = new Vector3( clampedFlat.x, _rb.velocity.y,  clampedFlat.z);
+            Vector3 clampedFlat = flatVelocity.normalized * maxSpeed; _rb.velocity = new Vector3(clampedFlat.x, _rb.velocity.y, clampedFlat.z);
         }
     }
     public float _debugCarSpeed

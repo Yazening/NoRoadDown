@@ -177,6 +177,15 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClearPlayerPrefs"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa77b380-ea1b-4cfb-ad90-3ae63bcdd735"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -278,6 +287,17 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Decrease Boulder Speed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9914c1f2-d36a-4fba-b964-04f2b69bc54c"",
+                    ""path"": ""<Keyboard>/minus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClearPlayerPrefs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -299,6 +319,7 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
         m_DebugTools_Level3 = m_DebugTools.FindAction("Level 3", throwIfNotFound: true);
         m_DebugTools_IncreaseBoulderSpeed = m_DebugTools.FindAction("Increase Boulder Speed", throwIfNotFound: true);
         m_DebugTools_DecreaseBoulderSpeed = m_DebugTools.FindAction("Decrease Boulder Speed", throwIfNotFound: true);
+        m_DebugTools_ClearPlayerPrefs = m_DebugTools.FindAction("ClearPlayerPrefs", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -423,6 +444,7 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_DebugTools_Level3;
     private readonly InputAction m_DebugTools_IncreaseBoulderSpeed;
     private readonly InputAction m_DebugTools_DecreaseBoulderSpeed;
+    private readonly InputAction m_DebugTools_ClearPlayerPrefs;
     public struct DebugToolsActions
     {
         private @NoRoadDownInputs m_Wrapper;
@@ -436,6 +458,7 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
         public InputAction @Level3 => m_Wrapper.m_DebugTools_Level3;
         public InputAction @IncreaseBoulderSpeed => m_Wrapper.m_DebugTools_IncreaseBoulderSpeed;
         public InputAction @DecreaseBoulderSpeed => m_Wrapper.m_DebugTools_DecreaseBoulderSpeed;
+        public InputAction @ClearPlayerPrefs => m_Wrapper.m_DebugTools_ClearPlayerPrefs;
         public InputActionMap Get() { return m_Wrapper.m_DebugTools; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -472,6 +495,9 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
             @DecreaseBoulderSpeed.started += instance.OnDecreaseBoulderSpeed;
             @DecreaseBoulderSpeed.performed += instance.OnDecreaseBoulderSpeed;
             @DecreaseBoulderSpeed.canceled += instance.OnDecreaseBoulderSpeed;
+            @ClearPlayerPrefs.started += instance.OnClearPlayerPrefs;
+            @ClearPlayerPrefs.performed += instance.OnClearPlayerPrefs;
+            @ClearPlayerPrefs.canceled += instance.OnClearPlayerPrefs;
         }
 
         private void UnregisterCallbacks(IDebugToolsActions instance)
@@ -503,6 +529,9 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
             @DecreaseBoulderSpeed.started -= instance.OnDecreaseBoulderSpeed;
             @DecreaseBoulderSpeed.performed -= instance.OnDecreaseBoulderSpeed;
             @DecreaseBoulderSpeed.canceled -= instance.OnDecreaseBoulderSpeed;
+            @ClearPlayerPrefs.started -= instance.OnClearPlayerPrefs;
+            @ClearPlayerPrefs.performed -= instance.OnClearPlayerPrefs;
+            @ClearPlayerPrefs.canceled -= instance.OnClearPlayerPrefs;
         }
 
         public void RemoveCallbacks(IDebugToolsActions instance)
@@ -536,5 +565,6 @@ public partial class @NoRoadDownInputs: IInputActionCollection2, IDisposable
         void OnLevel3(InputAction.CallbackContext context);
         void OnIncreaseBoulderSpeed(InputAction.CallbackContext context);
         void OnDecreaseBoulderSpeed(InputAction.CallbackContext context);
+        void OnClearPlayerPrefs(InputAction.CallbackContext context);
     }
 }

@@ -50,9 +50,9 @@ MonoBehaviour:
   _winPanel: {fileID: 0}
   _countdownText: {fileID: 0}
   _boostIcon: {fileID: 0}
-  _goTextSize: 25
+  _goTextSize: 75
   _nextLevelName: 
-  _mainMenuName: MainMenu
+  _mainMenuName: Main Menu
   _carController: {fileID: 0}
   _boostSystem: {fileID: 0}
 --- !u!114 &4009458590011526052
@@ -92,7 +92,6 @@ MonoBehaviour:
   _debugText: {fileID: 0}
   _carController: {fileID: 0}
   _boostSystem: {fileID: 0}
-  _textSize: 213
   _level1Name: 
   _level2Name: 
   _level3Name: 

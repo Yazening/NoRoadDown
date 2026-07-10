@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6785249393056545932}
   - component: {fileID: 377979676387548235}
   m_Layer: 0
-  m_Name: Hit Impact
+  m_Name: Brown Impact Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8160502170736955153}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: d50334a65fc786843803ae421ef2eee3, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 13dc1fdb625e1024a98358d9432fd7e4, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0

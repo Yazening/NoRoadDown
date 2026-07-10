@@ -37,6 +37,7 @@ public class DebugTools : MonoBehaviour
         _inputActions.DebugTools.Level1.performed += OnLoadLevel1;
         _inputActions.DebugTools.Level2.performed += OnLoadLevel2;
         _inputActions.DebugTools.Level3.performed += OnLoadLevel3;
+        _inputActions.DebugTools.ClearPlayerPrefs.performed += OnClearPlayerPrefs;
     }
 
     private void OnDisable()
@@ -50,7 +51,9 @@ public class DebugTools : MonoBehaviour
         _inputActions.DebugTools.Level1.performed -= OnLoadLevel1;
         _inputActions.DebugTools.Level2.performed -= OnLoadLevel2;
         _inputActions.DebugTools.Level3.performed -= OnLoadLevel3;
+        _inputActions.DebugTools.ClearPlayerPrefs.performed -= OnClearPlayerPrefs;
         _inputActions.DebugTools.Disable();
+        
     }
 
     private void Update()
@@ -125,6 +128,12 @@ public class DebugTools : MonoBehaviour
         SceneManager.LoadScene(_level3Name);
     }
 
+    private void OnClearPlayerPrefs(InputAction.CallbackContext ctx)
+    {
+        if (!_debugEnabled) return;
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
     private void UpdateDebugText()
     {
         float boulderSpeed = _boulderHitKart != null ? _boulderHitKart.DebugGetSpeed() : 0f;
@@ -134,6 +143,7 @@ public class DebugTools : MonoBehaviour
             $"Car Speed: {_carController.CurrentSpeed:F1} (I/O)\n" +
             $"Boost: {(_boostSystem._hasBoost ? "FULL" : "EMPTY")} (B)\n" +
             $"Boulder Speed: {boulderSpeed:F1} (N/M)\n" +
-            $"1 = {_level1Name} | 2 = {_level2Name} | 3 = {_level3Name}";
+            $"1 = {_level1Name} | 2 = {_level2Name} | 3 = {_level3Name}\n" +
+            $"Clear Player Prefs = - (Subtract)";
     }
 }

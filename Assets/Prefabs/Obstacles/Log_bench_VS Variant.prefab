@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleType: 0
-  _bounceForce: 10000
+  _bounceForce: 23.5
   _recoveryDelay: 1
   _moveSpeed: 3
   _moveDistance: 4
@@ -98,5 +98,5 @@ MonoBehaviour:
   _fallForce: 30
   _shadowMinScale: {x: 0, y: 0, z: 0}
   _shadowMaxScale: {x: 0, y: 0, z: 0}
-  _VFXHitImpact: {fileID: 8160502170736955153, guid: a39913faa6937864dbc96e82300ad6e2, type: 3}
+  _VFXHitImpact: {fileID: 8160502170736955153, guid: b2921bbc433f5e048ba08177e1ca756e, type: 3}
   _VFXFallingImpact: {fileID: 0}
