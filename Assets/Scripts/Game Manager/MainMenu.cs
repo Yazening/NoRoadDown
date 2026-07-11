@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 
+// Handles panel navigation, level locking, settins and scenes loadings
 public class MainMenu : MonoBehaviour
 {
     [Header("Panels")]
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private Slider _brightnessSlider;
     [SerializeField] private Toggle _fullscreenToggle;
-
+    [SerializeField] private Image _brightnessOverlay;
 
     private void Start()
     {
@@ -36,6 +36,7 @@ public class MainMenu : MonoBehaviour
         UpdateLevelButtons();
     }
 
+    // reads playerprefs to check which level has the player unlockded
     private void UpdateLevelButtons()
     {
         bool level2Unlocked = PlayerPrefs.GetInt("Level2Unlocked", 0) == 1;
@@ -52,6 +53,7 @@ public class MainMenu : MonoBehaviour
             _level3LockIcon.SetActive(!level3Unlocked);
     }
 
+    // manages Main menu settings and levels panels.
     public void ShowMainMenu()
     {
         _mainMenuPanel.SetActive(true);
@@ -74,6 +76,7 @@ public class MainMenu : MonoBehaviour
         _settingsPanel.SetActive(true);
     }
 
+    // unlocks levels if player completed them and loads them as well
     public void LoadLevel1()
     {
         SceneManager.LoadScene(_level1Name);
@@ -98,26 +101,53 @@ public class MainMenu : MonoBehaviour
 
     public void OnBrightnessChanged(float value)
     {
-        RenderSettings.ambientIntensity = value;
+        if (_brightnessOverlay != null)
+    {
+            Color c = _brightnessOverlay.color;
+            c.a = 1f - value; 
+            _brightnessOverlay.color = c;
+        }
         PlayerPrefs.SetFloat("Brightness", value);
     }
 
     public void OnFullscreenToggled(bool value)
     {
-        Screen.fullScreen = value;
+        if (value)
+        {
+            Resolution nativeRes = Screen.currentResolution;
+            Screen.SetResolution(nativeRes.width, nativeRes.height, FullScreenMode.FullScreenWindow);
+        }
+        else
+        {
+            Screen.SetResolution(1920, 1080, FullScreenMode.Windowed);
+        }
         PlayerPrefs.SetInt("Fullscreen", value ? 1 : 0);
     }
 
+    // Loads the saved settings and applies them when game opens
     private void LoadSettings()
-    { 
+    {
         float savedBrightness = PlayerPrefs.GetFloat("Brightness", 1f);
-        RenderSettings.ambientIntensity = savedBrightness;
+        if (_brightnessOverlay != null)
+        {
+            Color c = _brightnessOverlay.color;
+            c.a = 1f - savedBrightness;
+            _brightnessOverlay.color = c;
+        }
         if (_brightnessSlider != null)
-            _brightnessSlider.value = savedBrightness;
+            _brightnessSlider.SetValueWithoutNotify(savedBrightness);
 
         bool savedFullscreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
-        Screen.fullScreen = savedFullscreen;
+        if (savedFullscreen)
+        {
+            Resolution nativeRes = Screen.currentResolution;
+            Screen.SetResolution(nativeRes.width, nativeRes.height, FullScreenMode.FullScreenWindow);
+        }
+        else
+        {
+            Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
+        }
         if (_fullscreenToggle != null)
-            _fullscreenToggle.isOn = savedFullscreen;
+            _fullscreenToggle.SetIsOnWithoutNotify(savedFullscreen);
     }
 }

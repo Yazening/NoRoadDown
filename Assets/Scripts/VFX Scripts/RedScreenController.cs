@@ -25,6 +25,7 @@ public class RedScreenController : MonoBehaviour
         UpdateRedScreen();
     }
 
+    // calls the boulder when it spawns. 
     public void SetBoulder(Transform boulder)
     {
         _boulder = boulder;
@@ -41,17 +42,21 @@ public class RedScreenController : MonoBehaviour
             
         }
 
+        // meausures distance betweeen kart and boulder
         float distanceToBoulder = Vector3.Distance(_kart.position, _boulder.position);
         float targetIntensity = Mathf.InverseLerp( _dangerStartDistance, _dangerClosestDistance, distanceToBoulder);
 
+        // this is intensity as 0 being lowest intersity and 1 being the max. 
         targetIntensity = Mathf.Clamp(targetIntensity, 0f, 1f) * _maxRedIntensity;
 
+        // adds the "Boulder Incoming Text" when its too close
         if (_pulseEnabled && targetIntensity > 0.4f)
         {
             float pulse = Mathf.Sin(Time.time * _pulseFrequency) * _pulseStrength;
             targetIntensity += pulse;   
         }
 
+        // fades in the red vignette (whatever you wanna call it)
         _currentAlpha = Mathf.Lerp(_currentAlpha, targetIntensity, _fadeSpeed * Time.deltaTime);
 
         SetRedAlpha(_currentAlpha);

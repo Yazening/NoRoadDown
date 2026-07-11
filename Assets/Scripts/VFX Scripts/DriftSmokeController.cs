@@ -8,9 +8,9 @@ public class DriftSmokeController : MonoBehaviour
     [SerializeField] private VisualEffect _smokeRight;
 
     [Header("VFX Tuning")]
-    [SerializeField] private float _steerThreshold = 0.5f;
-    [SerializeField] private float _minSpeedForDrift = 3f;
-    [SerializeField] private float _spawnRate = 100f;
+    [SerializeField] private float _steerThreshold = 0.5f; // angle needed for VFX to start appearing
+    [SerializeField] private float _minSpeedForDrift = 3f; // There won't be smoke if the kart is stationary
+    [SerializeField] private float _spawnRate = 100f; // particle spawn rate when smoke appears
 
     private PlayerInputHandler _input;
     private CarController _carController;
@@ -31,11 +31,13 @@ public class DriftSmokeController : MonoBehaviour
         bool isSteeringRight = _input.TurnInput > _steerThreshold;
         bool isSteeringLeft = _input.TurnInput < -_steerThreshold;
 
+        // turning right, makes the vfx appears
         if (isMovingFastEnough && isSteeringRight)
         {
             SetSmoke(_smokeLeft, true);
             SetSmoke(_smokeRight, false);
         }
+        // turning left, makes the vfx appears
         else if (isMovingFastEnough && isSteeringLeft)
         {
             SetSmoke(_smokeRight, true);

@@ -1,24 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CarRecoverySystem : MonoBehaviour
-{ 
-[Header("Fall Detection")]
-    [SerializeField] private float _fallYThreshold = -10f;
+public class KartRecoverySystem : MonoBehaviour
+    { 
 
 [Header("Flip Detection")]
-[SerializeField] private float _flipDotThreshold = 0.3f; 
-[SerializeField] private float _flipTimeToRespawn = 2f; 
-[SerializeField] private float _stuckSpeedThreshold = 0.5f;
+[SerializeField] private float _flipDotThreshold = 0.3f; // how much does the kart needs to rotate to be considred flipped 
+[SerializeField] private float _flipTimeToRespawn = 2f; // time needed to be stuck to respawn
+[SerializeField] private float _stuckSpeedThreshold = 0.5f; // below this speed, it will respawn as well
 
 [Header("Boulder")]
 [SerializeField] private BoulderHitKart _boulder;
-[SerializeField] private float _resumeSpeedThreshold = 1f;
+[SerializeField] private float _resumeSpeedThreshold = 1f; // boulde start moving again when kart is faster than this variable
 
 private Rigidbody _rb;
 private CarController _carController;
 
+    // last  checkpoint the kart passed
 private Vector3 _lastCheckpointPos;
 private Quaternion _lastCheckpointRot;
 private int _lastCheckpointIndex = -1;
@@ -30,21 +27,18 @@ private void Awake()
 {
     _rb = GetComponent<Rigidbody>();
     _carController = GetComponent<CarController>();
-    // Fallback checkpoint = spawn position, in case player falls before hitting one
+
+        // checks the last fall point whereever the kart fell
     _lastCheckpointPos = transform.position;
     _lastCheckpointRot = transform.rotation;
 }
 
 private void Update()
 {
-    if (transform.position.y < _fallYThreshold)
-    {
-        Respawn();
-        return;
-    }
 
     CheckFlip();
 
+        // when kart starts moving at certain speed, the boulder starts moving
     if (_waitingForResume && _rb.velocity.magnitude > _resumeSpeedThreshold)
     {
         _boulder.Resume();
@@ -52,6 +46,7 @@ private void Update()
     }
 }
 
+// check if kart is flipped
 private void CheckFlip()
 {
     float upAlignment = Vector3.Dot(transform.up, Vector3.up);
@@ -70,6 +65,7 @@ private void CheckFlip()
     }
 }
 
+    // called everytime the kart passes a new checkpoint
 public void SetCheckpoint(Vector3 pos, Quaternion rot, int index)
 {
     if (index <= _lastCheckpointIndex) return; // 
@@ -80,14 +76,19 @@ public void SetCheckpoint(Vector3 pos, Quaternion rot, int index)
 
 private void Respawn()
 {
+        // stops all movement
     _rb.velocity = Vector3.zero;
     _rb.angularVelocity = Vector3.zero;
-    transform.SetPositionAndRotation(_lastCheckpointPos, _lastCheckpointRot);
+
+        // goes bacck to last check point
+        transform.SetPositionAndRotation(_lastCheckpointPos, _lastCheckpointRot);
     _flipTimer = 0f;
 
+        // fixes kart rotation
     if (_carController != null)
         _carController.ResetTurnReference();
 
+    // stops boulder
     if (_boulder != null)
     {
         _boulder.PauseAndClamp(_lastCheckpointPos);

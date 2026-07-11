@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.VFX;
 
+// Boost VFX Controller
 public class VFXController : MonoBehaviour
 {
-    [SerializeField] private VisualEffect[] _boostVFX;
+    [SerializeField] private VisualEffect[] _boostVFX; // array of vfx's are on when boosting
 
     private CarController _carController;
 
@@ -11,7 +12,7 @@ public class VFXController : MonoBehaviour
     {
         _carController = GetComponent<CarController>();
 
-        StopAll(_boostVFX);
+        StopAll(_boostVFX); // nothing is playing on start
     }
 
     private void Update()
@@ -21,6 +22,7 @@ public class VFXController : MonoBehaviour
 
     private void HandleVFX()
     {
+        // seas the state of the boost if its boosting = boost vfx on, vice versa
         if (_carController.CurrentState == KartState.Boosting)
         {
             PlayAll(_boostVFX);

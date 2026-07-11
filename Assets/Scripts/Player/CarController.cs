@@ -1,34 +1,44 @@
 using UnityEngine;
+
+// states the state of the kart 
+// Mainly for other scripts like BoostSystem, VFX, read it to act according to the state of the kart
 public enum KartState
 {
     Moving,
     Boosting
 }
+
+// controls kart movement
+// reads input from playerinputhandler
+// kart always moves forward, player can only steer right and left and boost
 public class CarController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float _carSpeed = 2000f;
     [SerializeField] private float _turnStrength = 100f;
     [SerializeField] private float _maxSpeed = 15f;
-    [SerializeField] private float _maxTurnAngle = 70f;
+    [SerializeField] private float _maxTurnAngle = 70f; // Maximum degrees the kart can turn/steer
 
     [Header("Boost Settings")]
-    [SerializeField] private float _boostMultiplier = 2f;
-    [SerializeField] private float _boostDuration = 1.5f;
+    [SerializeField] private float _boostMultiplier = 2f; // multiplies by _carspeed when boosted
+    [SerializeField] private float _boostDuration = 1.5f; // duration of boost
 
     [Header("Ground Settings")]
     [SerializeField] private float _groundRayDistance = 0.6f;
     [SerializeField] private float _gravityForce = 20f;
     [SerializeField] private LayerMask _groundLayer;
 
+    // public properties, other scirpts can read them but can't change them
     public KartState CurrentState { get; private set; }
     public float CurrentSpeed { get; private set; }
     public bool IsGrounded { get; private set; }
 
+    // private references, in awake so we don't have to call them every frame lose preformance
     private Rigidbody _rb;
     private PlayerInputHandler _input;
     private BoostSystem _boostSystem;
 
+    // tracks boost
     private bool _hasBoost = false;
     private float _boostTimer = 0f;
     private float _initialYAngle;
@@ -66,6 +76,7 @@ public class CarController : MonoBehaviour
         _initialYAngle = transform.eulerAngles.y;
     }
 
+    // counts down the boost variable, and then returns to Moving state when it finsihes 
     private void UpdateBoostTimer()
     {
         if (CurrentState == KartState.Boosting)
@@ -80,6 +91,7 @@ public class CarController : MonoBehaviour
         }
     }
 
+    // checks input and if player has boost, which state the state of the kart
     private void UpdateState()
     {
         if (_input.IsBoostPressed && _hasBoost && CurrentState != KartState.Boosting)
@@ -117,6 +129,7 @@ public class CarController : MonoBehaviour
         _rb.AddForce(transform.forward * force * Time.fixedDeltaTime, ForceMode.Acceleration);
     }
 
+    // uses raycast to check if kart is on slope and if not applies move force so kart is attached to slope
     private void ApplyGravity()
     {
         RaycastHit hit;
@@ -128,6 +141,9 @@ public class CarController : MonoBehaviour
         }
     }
 
+
+    // maximizes the kart speed
+    // it clamps horizontal velocity so the slope's downward pull still work properly
     private void ClampSpeed()
     {
         Vector3 flatVelocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
@@ -139,6 +155,8 @@ public class CarController : MonoBehaviour
             Vector3 clampedFlat = flatVelocity.normalized * maxSpeed; _rb.velocity = new Vector3(clampedFlat.x, _rb.velocity.y, clampedFlat.z);
         }
     }
+
+    // Debug Tools
     public float _debugCarSpeed
     {
         get { return _carSpeed; }

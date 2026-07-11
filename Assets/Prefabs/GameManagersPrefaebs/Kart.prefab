@@ -917,6 +917,7 @@ GameObject:
   - component: {fileID: 5765592982802328847}
   - component: {fileID: 5765592982802328846}
   - component: {fileID: 7579439635146024889}
+  - component: {fileID: 6800412397534029642}
   m_Layer: 0
   m_Name: Kart
   m_TagString: Player
@@ -1077,6 +1078,24 @@ MonoBehaviour:
   _rotationSpeed: 100
   _useCarSpeed: 1
   _carController: {fileID: 5765592982802328845}
+--- !u!114 &6800412397534029642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666513171183684445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7fc8bd058c94e4e82dba3bbc2417ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveInterval: 2
+  _minSpeedToSave: 1
+  _fallYThreshold: -9e+14
+  _stuckSpeedThreshold: 1.4
+  _stuckTimeLimit: 3
+  _boulderResumeDelay: 2
 --- !u!1 &5765592981968747665
 GameObject:
   m_ObjectHideFlags: 0
